@@ -2,9 +2,14 @@
 
 public class Controller
 {
+    public IRepository Repository;
+
+    public Controller(IRepository repository)
+    {
+        this.Repository = repository;
+    }
     public void PrintData()
     {
-        var repo = new Repository();
-        Console.WriteLine(repo.GetData());
+        Console.WriteLine(Repository.GetData());
     }
 }
