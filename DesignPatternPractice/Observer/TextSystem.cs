@@ -7,6 +7,7 @@ public class TextSystem : IMessageObserver
     public TextSystem(MessageSystem messageSystem)
     {
         _messageSystem = messageSystem;
+       
     }
 
     public void Update()

@@ -7,7 +7,8 @@ public class MessageSystem : IMessageSystem
 
     public void SetState(string message)
     {
-            _textMessage = message;        
+            _textMessage = message;    
+            Notify();
     }
 
     public string GetState()
@@ -24,7 +25,7 @@ public class MessageSystem : IMessageSystem
         _observers.Remove(observer);
     }
 
-    public void Notify(IMessageObserver observer)
+    public void Notify()
     {
         foreach (var item in _observers)
         {
