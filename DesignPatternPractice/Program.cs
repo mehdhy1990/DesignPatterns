@@ -5,7 +5,7 @@ using DesignPatternPractice.FactoryMethodPattern;
 using DesignPatternPractice.RepositoryPattern;
 
 Console.WriteLine("Hello, World!");
-var BmwFactory = new BMW();
-var Bmwcar = BmwFactory.CreateCar();
-var BenzFactory = new Benz();
-var BenzCar = BenzFactory.CreateCar();
+var bmwFactory = new BMW();
+var bmwCar = bmwFactory.CreateCar();
+var benzFactory = new Benz();
+var benzCar = benzFactory.CreateCar();
