@@ -6,6 +6,7 @@ public class IsContainDrug : LegalChecker
     {
         if (email.Title.Contains("Drug") || email.Body.Contains("Drug"))
         {
+            Console.WriteLine("hello from drug checker");
             return true;
         }
 

@@ -6,6 +6,7 @@ public class IsContainPornography : LegalChecker
     {
         if (email.Body.Contains("porn") || email.Title.Contains("porn"))
         {
+            Console.WriteLine("hello from porn checker");
             return true;
         }
         if(NextChecker is null) return false;
