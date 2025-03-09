@@ -2,10 +2,16 @@
 
 using DesignPatternPractice.ChainOfResponsibility;
 using DesignPatternPractice.FactoryMethodPattern;
+using DesignPatternPractice.Observer;
 using DesignPatternPractice.RepositoryPattern;
 
 Console.WriteLine("Hello, World!");
-var bmwFactory = new BMW();
-var bmwCar = bmwFactory.CreateCar();
-var benzFactory = new Benz();
-var benzCar = benzFactory.CreateCar();
+var messageSystem = new MessageSystem();
+
+messageSystem.Attach(new EmailObserver(messageSystem));
+messageSystem.Attach(new TextSystem(messageSystem));
+messageSystem.Attach(new VideoSystem(messageSystem));
+
+messageSystem.SetState("","");
+// messageSystem.SetState("hello to email and text","");
+messageSystem.SetState("","video is called");

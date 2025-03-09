@@ -13,6 +13,10 @@ public class TextSystem : IMessageObserver
     public void Update()
     {
         var state = _messageSystem.GetMessage();
-        Console.WriteLine($"the text system is reacted to {state}");
+        if (state != "")
+        {
+            Console.WriteLine($"the text system is reacted to {state}");
+        }
+        
     }
 }
