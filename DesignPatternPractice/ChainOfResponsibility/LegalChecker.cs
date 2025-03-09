@@ -9,6 +9,6 @@ public abstract class LegalChecker
         NextChecker = nextChecker;
     }
 
-    public abstract bool Check();
+    public abstract bool Check(Email email);
 
 }
