@@ -4,14 +4,20 @@ public class MessageSystem : IMessageSystem
 {
     private readonly List<IMessageObserver> _observers = [];
     private string _textMessage = string.Empty;
+    private string _videoMessage = string.Empty;
 
-    public void SetState(string message)
+    public void SetState(string message,string video)
     {
             _textMessage = message;    
+            _videoMessage = video;
             Notify();
     }
 
-    public string GetState()
+    public string GetVideoMessage()
+    {
+        return _videoMessage;
+    }
+    public string GetMessage()
     {
         return _textMessage;
     }
