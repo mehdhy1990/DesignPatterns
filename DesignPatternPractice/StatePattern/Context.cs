@@ -2,10 +2,19 @@
 
 public class Context
 {
-    private State _state;
+    private IState _state;
 
-    public void SetState(State state)
+    public Context(IState state)
     {
         _state = state;
+    }
+    public void SetState(IState state)
+    {
+        _state = state;
+    }
+
+    public void Request()
+    {
+       _state.Power(this);
     }
 }

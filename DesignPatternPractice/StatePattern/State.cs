@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternPractice.StatePattern;
 
-public interface State
+public interface IState
 {
     void Power(Context context);
 }
