@@ -6,22 +6,12 @@ using DesignPatternPractice.ChainOfResponsibility;
 using DesignPatternPractice.FactoryMethodPattern;
 using DesignPatternPractice.Observer;
 using DesignPatternPractice.RepositoryPattern;
+using DesignPatternPractice.Strategy;
 
 
-var dough = new Dough.Builder().SetColor("red").SetThickness("2").Build();
-var pizza = new Pizza.Builder();
-var any = pizza.SetDough( ()=> new Dough.Builder().SetColor("red").SetThickness("2").Build()).SetSauce("sauce").Build();
-Console.WriteLine($"{any.sauce} {any.dough.thickness} {any.dough.color}");
-
-
-void Print(Action<string> some)
-{
-   some("khare gav");
-}
-
-void SayHello(string name)
-{
-    Console.WriteLine("Hello " + name);
-}
-Action<string> say = SayHello;
-Print(say);
+var context = new EnemyContext();
+var batman = new Batman();
+var superman = new Superman();
+var thor = new Thor();
+context.SetEnemy(thor);
+context.Execute();
