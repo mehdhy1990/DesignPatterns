@@ -1,11 +1,11 @@
 ﻿namespace DesignPatternPractice.Builder;
 
-public record Pizza(string sauce, string dough)
+public record Pizza(string sauce, Dough dough)
 {
     public class Builder
     {
         public string Sauce { get; set; } = string.Empty;
-        public string Dough { get; set; } = string.Empty;
+        public Dough Dough { get; set; } 
 
         public Builder SetSauce(string sauce)
         {
@@ -13,9 +13,10 @@ public record Pizza(string sauce, string dough)
             return this;
         }
 
-        public Builder SetDough(string dough)
+        public Builder SetDough(Func<Dough> dough)
         {
-            this.Dough = dough;
+           var newdough = dough();
+           this.Dough = newdough;
             return this;
         }
 

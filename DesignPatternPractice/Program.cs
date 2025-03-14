@@ -1,22 +1,27 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Runtime.InteropServices.JavaScript;
+using DesignPatternPractice.Builder;
 using DesignPatternPractice.ChainOfResponsibility;
 using DesignPatternPractice.FactoryMethodPattern;
 using DesignPatternPractice.Observer;
 using DesignPatternPractice.RepositoryPattern;
 
 
+var dough = new Dough.Builder().SetColor("red").SetThickness("2").Build();
+var pizza = new Pizza.Builder();
+var any = pizza.SetDough( ()=> new Dough.Builder().SetColor("red").SetThickness("2").Build()).SetSauce("sauce").Build();
+Console.WriteLine($"{any.sauce} {any.dough.thickness} {any.dough.color}");
 
- void SayHello(Func<String> func)
+
+void Print(Action<string> some)
 {
-    Console.WriteLine(func());
+   some("khare gav");
 }
 
- string SaySomething()
- {
-     return "fuck you from hello world";
- }
-Func<string> say = SaySomething;
-SayHello(say);
- 
+void SayHello(string name)
+{
+    Console.WriteLine("Hello " + name);
+}
+Action<string> say = SayHello;
+Print(say);
