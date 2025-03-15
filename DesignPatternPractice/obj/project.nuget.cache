@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "92eCyLrudBk=",
+  "dgSpecHash": "NBJsyVn7AP0=",
   "success": true,
   "projectFilePath": "C:\\Users\\mehdi\\RiderProjects\\DesignPatternPractice\\DesignPatternPractice\\DesignPatternPractice.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mehdi\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0\\microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\mehdi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

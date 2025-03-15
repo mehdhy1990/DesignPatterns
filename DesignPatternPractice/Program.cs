@@ -1,7 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using DesignPatternPractice.AdapterDesignPattern;
-using DesignPatternPractice.StatePattern;
+using System.ComponentModel.Design;
+using System.Security.Authentication.ExtendedProtection;
+using Microsoft.Extensions.DependencyInjection;
 
-ITranslator translate = new Translator(new CzechLanguage());
-translate.Translate();
+var service = new ServiceCollection();
+service.AddTransient<IClient, GitHubClinet>();
+service.AddTransient<GitHubServices>();
+var serviceProvider = service.BuildServiceProvider();
+var client = serviceProvider.GetRequiredService<GitHubClinet>();
+var githubservice = serviceProvider.GetRequiredService<GitHubServices>();
+var stars = githubservice.GetStars(repoName: "hello world");
+Console.WriteLine(value: stars);
