@@ -1,8 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using DesignPatternPractice.AdapterDesignPattern;
 using DesignPatternPractice.StatePattern;
 
-var context = new Context(new OnState());
-context.Request();
-context.Request();
-context.Request();
+ITranslator translate = new Translator(new CzechLanguage());
+translate.Translate();
