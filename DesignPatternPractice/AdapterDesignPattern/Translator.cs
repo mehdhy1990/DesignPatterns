@@ -2,18 +2,15 @@
 
 namespace DesignPatternPractice.AdapterDesignPattern;
 
-public class Translator
+public class Translator : ITranslator
 {
-    public void TranslateLanguage()
+    private readonly CzechLanguage _language;
+    public Translator(CzechLanguage czechLanguage)
     {
-        Console.WriteLine("Hello from TranslateLanguage");
+        _language = czechLanguage;
     }
-}
-
-public class CzechLanguage()
-{
-    public void Speak()
+    public void Translate()
     {
-        Console.WriteLine("Hello from CzechLanguage");
+      _language.Speak();
     }
 }
