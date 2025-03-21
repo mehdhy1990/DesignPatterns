@@ -4,7 +4,7 @@ public class ConcreteElement2 : Element
 {
     public void Accept(Vistor visitor)
     {
-        throw new NotImplementedException();
+       visitor.Visit(this);
     }
 
     public string Operation()

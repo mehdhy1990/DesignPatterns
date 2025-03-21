@@ -4,11 +4,13 @@ public class ConcreteVisitor1 : Vistor
 {
     public void Visit(ConcreteElement1 element)
     {
-        throw new NotImplementedException();
+        var message = element.Operation();
+        Console.WriteLine(message);
     }
 
     public void Visit(ConcreteElement2 element)
     {
-        throw new NotImplementedException();
+        var message = element.Operation();
+        Console.WriteLine(message);
     }
 }
