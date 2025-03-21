@@ -6,4 +6,9 @@ public class ConcreteElement2 : Element
     {
         throw new NotImplementedException();
     }
+
+    public string Operation()
+    {
+        return "ConcreteElement2";
+    }
 }
