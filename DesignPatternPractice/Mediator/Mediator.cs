@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternPractice.Mediator;
 
-public class Mediator
+public interface Mediator
 {
-    
+    void Notify(Colleage sender,string @event);
 }

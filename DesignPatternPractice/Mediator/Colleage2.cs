@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternPractice.Mediator;
 
-public class Colleage2
+public class Colleage2 : Colleage
 {
     
 }
