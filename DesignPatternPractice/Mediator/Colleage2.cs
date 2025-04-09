@@ -1,6 +1,9 @@
 ﻿namespace DesignPatternPractice.Mediator;
 
-public class Colleage2 : Colleage
+public class Colleague2 : Colleague
 {
-    
+    public void Operation2()
+    {
+        Console.WriteLine("Colleague 2 does operation 2");
+    }
 }

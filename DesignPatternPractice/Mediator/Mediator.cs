@@ -2,5 +2,5 @@
 
 public interface Mediator
 {
-    void Notify(Colleage sender,string @event);
+    void Notify(Colleague sender,string @event);
 }

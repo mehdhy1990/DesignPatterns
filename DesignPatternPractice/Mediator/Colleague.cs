@@ -1,11 +1,11 @@
 ﻿namespace DesignPatternPractice.Mediator;
 
-public class Colleage
+public class Colleague
 {
     protected Mediator _mediator = null!;
 
 
-    void SetMediator(Mediator mediator)
+  public  void SetMediator(Mediator mediator)
     {
         _mediator = mediator;
     }
