@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternPractice.Mediator;
 
-public class Chatroom
+public class Chatroom : IChatRoom
 {
     public Dictionary<string, TeamMember> Members = new();
 
@@ -12,9 +12,11 @@ public class Chatroom
         }
     }
 
-    public void SendMessage(string message)
+    public void SendMessage(TeamMember teamMember, string message)
     {
-        Console.WriteLine("Hello to all team members");
+        throw new NotImplementedException();
     }
+
+    
 
 }
