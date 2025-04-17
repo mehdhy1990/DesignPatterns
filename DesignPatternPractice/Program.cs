@@ -1,13 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using DesignPatternPractice.Mediator;
-using DesignPatternPractice.Observer;
+using System.Text;
+using DesignPatternPractice.Strategy;
 
-OrderService orderService = new ();
-TicketStockService ticketStockService = new ();
-TTicketResseller ticketRessellerService = new ();
-
-orderService.AddObserver(ticketRessellerService);
-orderService.AddObserver(ticketStockService);
-
-orderService.CompleteTask(5,6);
+Order order = new("Banana",2,1000);
+CSVExportService csvExportService = new();
+XMLExportService xmlExportService = new();
+JsonExportService jsonExportService = new();
+order.ExportService = csvExportService;
+order.Export();
+order.ExportService = xmlExportService;
+order.Export();
