@@ -1,18 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using DesignPatternPractice.Mediator;
+using DesignPatternPractice.Observer;
 
-var chatroom = new ChatRoom();
-var mehdi = new Lawyer("mehdi");
-var massod = new Lawyer("massod");
-var merss = new Lawyer("merss");
+OrderService orderService = new ();
+TicketStockService ticketStockService = new ();
+TTicketResseller ticketRessellerService = new ();
 
-mehdi.SetChatRoom(chatroom);
-massod.SetChatRoom(chatroom);
-merss.SetChatRoom(chatroom);
+orderService.AddObserver(ticketRessellerService);
+orderService.AddObserver(ticketStockService);
 
-chatroom.Register(mehdi);
-chatroom.Register(massod);
-chatroom.Register(merss);
-
-merss.SendMessage("hello to all of you!");
+orderService.CompleteTask(5,6);
