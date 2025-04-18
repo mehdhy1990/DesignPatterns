@@ -1,7 +1,7 @@
 ﻿namespace DesignPatternPractice.CommandPattern;
 
 public class CommandManger {
-    private Stack<ICommand> _commandStack;
+    private Stack<ICommand> _commandStack =new();
 
     public void Invoke(ICommand command)
     {
