@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="AdapterDesignPattern\" />
       <Folder Include="IteratorDesginPattern\" />
       <Folder Include="Singleton\" />
     </ItemGroup>
