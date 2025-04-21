@@ -1,13 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using DesignPatternPractice.CompositeDesignPattern;
+using DesignPatternPractice.AdapterDesignPattern;
 
-var group = new Group();
-var shape = new Shape();
-group.AddComponent(shape);
-group.AddComponent(shape);
-var group2 = new Group();
-group2.AddComponent(shape);
-group2.AddComponent(shape);
-group.AddComponent(group2);
-group.Move();
+Image image = new Image();
+ImageView imageView = new(image);
+imageView.Apply(new VividFiler());
