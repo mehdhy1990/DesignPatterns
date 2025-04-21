@@ -1,16 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System.Text;
-using DesignPatternPractice.CommandPattern;
-using DesignPatternPractice.StatePattern;
-using DesignPatternPractice.Strategy;
+using DesignPatternPractice.CompositeDesignPattern;
 
-Canvas canvas = new Canvas();
-BrushTool brushTool = new BrushTool();
-SelectionTool selectionTool = new SelectionTool();
-canvas.Tool = brushTool;
-canvas.MouseDown();
-canvas.MouseUp();
-canvas.Tool = selectionTool;
-canvas.MouseDown();
-canvas.MouseUp();
+var group = new Group();
+var shape = new Shape();
+group.AddComponent(shape);
+group.AddComponent(shape);
+var group2 = new Group();
+group2.AddComponent(shape);
+group2.AddComponent(shape);
+group.AddComponent(group2);
+group.Move();
