@@ -1,7 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using DesignPatternPractice.AdapterDesignPattern;
+using DesignPatternPractice.DecoratorPattern;
 
-Image image = new Image();
-ImageView imageView = new(image);
-imageView.Apply(new VividFiler());
+
+var encrypt = new EncryptData(new CompressData(new CloudStream()));
+Cloud(encrypt);
+
+void Cloud(IStream data)
+{
+    data.Write("My name is mehdi");
+}
